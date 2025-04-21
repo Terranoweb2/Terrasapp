@@ -107,7 +107,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
             placeholder="Rechercher..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-gray-100 dark:bg-gray-800 rounded-lg py-2 pl-9 pr-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full bg-gray-100 dark:bg-gray-800 rounded-lg py-2 pl-9 pr-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#8b5cf6]"
           />
           <MagnifyingGlassIcon className="h-4 w-4 absolute left-2.5 top-2.5 text-gray-500 dark:text-gray-400" />
         </div>
@@ -119,7 +119,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
             key={conversation._id}
             onClick={() => onSelectConversation(conversation)}
             className={`flex items-center p-3 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 ${
-              selectedConversation?._id === conversation._id ? 'bg-blue-50 dark:bg-blue-900/30' : ''
+              selectedConversation?._id === conversation._id ? 'bg-[#ede9fe] dark:bg-[#6d28d9]/30' : ''
             }`}
           >
             <div className="relative flex-shrink-0">
@@ -129,7 +129,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
                 className="h-12 w-12 rounded-full object-cover"
               />
               {conversation.participants.some(p => p.status === 'online' && p._id !== currentUser?._id) && (
-                <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 border-2 border-white dark:border-gray-900"></span>
+                <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-[#a78bfa] border-2 border-white dark:border-gray-900"></span>
               )}
             </div>
             <div className="ml-3 flex-1 min-w-0">
@@ -147,7 +147,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
                   {conversation.lastMessage.content}
                 </p>
                 {conversation.unread > 0 && (
-                  <span className="flex-shrink-0 ml-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-xs font-medium text-white">
+                  <span className="flex-shrink-0 ml-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#8b5cf6] text-xs font-medium text-white">
                     {conversation.unread}
                   </span>
                 )}
@@ -158,7 +158,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
       </div>
       
       <div className="p-3 border-t border-gray-200 dark:border-gray-700">
-        <button className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors">
+        <button className="w-full py-2 bg-[#8b5cf6] hover:bg-[#7c3aed] text-white rounded-lg text-sm font-medium transition-colors">
           Nouvelle conversation
         </button>
       </div>

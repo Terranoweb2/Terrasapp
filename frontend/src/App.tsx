@@ -8,6 +8,9 @@ import { ThemeProvider } from './context/ThemeContext';
 import { ChatProvider } from './context/ChatContext';
 import { OfflineProvider } from './context/OfflineContext';
 
+// Composant de personnalisation du thème
+import ThemePanel from './components/UI/ThemePanel';
+
 // Layouts
 import AppLayout from './components/Layout/AppLayout';
 
@@ -30,6 +33,8 @@ function App() {
         <AuthProvider>
           <ThemeProvider>
             <ChatProvider>
+              {/* Panneau de configuration du thème */}
+              <ThemePanel />
             <Routes>
               {/* Redirection directe vers l'application principale au lieu de la page de connexion */}
               <Route path="/login" element={<Navigate to="/files" />} />
